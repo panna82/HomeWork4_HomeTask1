@@ -8,20 +8,17 @@ class Shape
 protected:
     std::string name;
     int side_number;
-    Shape(std::string setName, int setSideNumber) : name{ setName }, side_number{ setSideNumber }
-    {}
+    Shape(std::string setName, int setSideNumber) : name{ setName }, side_number{ setSideNumber }{}
 public:
-    Shape() = default;
+    Shape():Shape("Фигура",  0) {}
 
-    virtual std::string get_name()
+    std::string get_name() const
     {
-        name = "Фигура";
         return name;
     }
 
-    virtual int get_side_number()
+    int get_side_number() const
     {
-        side_number = 0;
         return side_number;
     }
 
@@ -30,17 +27,15 @@ public:
 class Triangle: public Shape
 {
     public:
-        Triangle() : Shape() {};
 
-        std::string get_name() override
+        Triangle() : Shape("Треугольник", 3) {}
+        std::string get_name() 
     {
-        name = "Треугольник";
         return name;
     }
 
-        int get_side_number() override
+        int get_side_number() 
         {
-            side_number = 3;
             return side_number;
         }
 };
@@ -48,17 +43,15 @@ class Triangle: public Shape
 class Quadrangle : public Shape
 {
 public:
-    Quadrangle() : Shape() {};
+    Quadrangle( ) : Shape("Четырёхугольник", 4) {}
 
-    std::string get_name() override
+    std::string get_name() 
     {
-        name = "Четырёхугольник";
         return name;
     }
 
-    int get_side_number() override
+    int get_side_number() 
     {
-        side_number = 4;
         return side_number;
     }
 };
