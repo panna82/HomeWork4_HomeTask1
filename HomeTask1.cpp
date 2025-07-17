@@ -27,33 +27,13 @@ public:
 class Triangle: public Shape
 {
     public:
-
         Triangle() : Shape("Треугольник", 3) {}
-        std::string get_name() 
-    {
-        return name;
-    }
-
-        int get_side_number() 
-        {
-            return side_number;
-        }
 };
 
 class Quadrangle : public Shape
 {
 public:
     Quadrangle( ) : Shape("Четырёхугольник", 4) {}
-
-    std::string get_name() 
-    {
-        return name;
-    }
-
-    int get_side_number() 
-    {
-        return side_number;
-    }
 };
 
 int main()
